@@ -61,7 +61,10 @@
     display: table;
     float: left;
     padding: 0px 20px;
+    opacity: 0.6;
 }
+.navigation a:hover {opacity: 1}
+
 .navigation a li{
     background-color: #E6AF2E;
     display: table-cell;
@@ -70,9 +73,9 @@
     color: white;
     font-family: 'PT Sans', sans-serif;
 }
-.navigation a:last-child{
+/* .navigation a:last-child{
     padding-right: 0;
-}
+} */
 
 .hamburger {
     background-color: transparent;
@@ -90,14 +93,12 @@
 }
 
 @media screen and (max-width: 1100px) {
-    body > main > div.header > div > div.outer_navigation > ul{
-        background-color: red;
-    }
     .navigation{
         display: none;
         width: 100%;
         flex-direction: column;
         flex-flow: column;
+        padding-right: 0;
     }
     .navigation li{
         position: absolute;
@@ -135,12 +136,14 @@
         width: 100%;
         flex-flow: column;
     }
-    body > main > div.header > div > div.outer_navigation > ul{
-        max-width: 50px !important;
-        
+    .webRight{
+        border-top: solid black 1px;
     }
     #nav-li{
         max-width: 80px;
+    }
+    .footerThird{
+        max-height: 10px;
     }
 }
 
@@ -173,7 +176,7 @@
     flex-flow: row;
     padding-left: 25%;
     padding-right: 15px;
-    border-top: solid black 1px;
+    /* border-top: solid black 1px; */
     justify-content: space-between;
 }
 .profileCard{
@@ -199,8 +202,6 @@
     justify-content: flex-start;
 }
 
-.messagesList{
-}
 .downloadPreview{
     display:flex;
     justify-content: flex-end;

@@ -5,7 +5,7 @@ import Navigo from "navigo";
 import { capitalize } from "lodash";
 
 const router = new Navigo(window.location.origin);
-
+// const { Header, Main, Footer } =require('./components')
 router
   .on({
     ":page": (params) => render(state[capitalize(params.page)]),
