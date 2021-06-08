@@ -335,7 +335,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var _default = function _default(st) {
-  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n<div class=\"header\">\n            <div class=\"inner_header\">\n                <div class=\"logo_container\">\n                    <h1>Top<span>Kek</span>!</h1>\n                </div>\n                <div class=\"outer_navigation\">\n                    <button class=\"hamburger\" id=\"hamburger\">\n                        <i class=\"fas fa-bars\"></i>\n                    </button>\n                    <ul class=\"navigation\">\n                        <a href=\"index.html\"><li id=\"nav-li\">Home</li></a>\n                        <a href=\"https://haydenmatz.me/index.html\"><li id=\"nav-li\">About</li></a>\n                        <!-- <a href=\"\"><li id=\"nav-li\">Portfolio</li></a> -->\n                        <a href=\"https://www.linkedin.com/in/hayden-matz-a90b70189/\"><li id=\"nav-li\">Contact</li></a>\n                    </ul>\n                </div>\n            </div>\n        </div>"])));
+  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n<div class=\"header\">\n            <div class=\"inner_header\">\n                <div class=\"logo_container\">\n                    <h1>Top<span>Kek</span>!</h1>\n                </div>\n                <div class=\"outer_navigation\">\n                    <button class=\"hamburger\" id=\"hamburger\">\n                        <i class=\"fas fa-bars\"></i>\n                    </button>\n                    <ul class=\"navigation\">\n                        <a id=\"nav-li\" href=\"index.html\">Home</a>\n                        <a id=\"nav-li\" href=\"https://haydenmatz.me/index.html\">About</a>\n                        <a id=\"nav-li\" href=\"https://www.linkedin.com/in/hayden-matz-a90b70189/\">Contact</a>\n                    </ul>\n                </div>\n            </div>\n        </div>"])));
 }; //if this isn't working check out step 10 in 6.3 SPA
 
 
@@ -19816,7 +19816,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45415" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43799" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
