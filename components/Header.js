@@ -11,10 +11,9 @@ export default st => html`
                         <i class="fas fa-bars"></i>
                     </button>
                     <ul class="navigation">
-                        <a href="index.html"><li id="nav-li">Home</li></a>
-                        <a href="https://haydenmatz.me/index.html"><li id="nav-li">About</li></a>
-                        <!-- <a href=""><li id="nav-li">Portfolio</li></a> -->
-                        <a href="https://www.linkedin.com/in/hayden-matz-a90b70189/"><li id="nav-li">Contact</li></a>
+                        <a id="nav-li" href="index.html">Home</a>
+                        <a id="nav-li" href="https://haydenmatz.me/index.html">About</a>
+                        <a id="nav-li" href="https://www.linkedin.com/in/hayden-matz-a90b70189/">Contact</a>
                     </ul>
                 </div>
             </div>
