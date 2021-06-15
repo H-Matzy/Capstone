@@ -1921,10 +1921,6 @@ module.exports = require('./lib/axios');
 var axios = require('axios').default;
 
 var videosList = document.getElementById('videosList');
-var obj = {
-  asma: 'AmazonianEncouragingLyrebirdAllenHuhu',
-  url: window.location.pathname
-};
 var messages = [];
 
 ComfyJS.onChat = function (user, message, flags, self, extra) {
@@ -1941,10 +1937,13 @@ var updateMessages = function updateMessages(text) {
   document.getElementById("messagesList").appendChild(node);
 };
 
-function result() {
-  var username = window.location.pathname;
+var username = window.location.pathname;
+var endpoint1 = "https://api.twitch.tv/kraken/clips/top?channel=".concat(username.substring(1), "&trending=true&limit=6");
+var endpoint2 = "https://api.twitch.tv/helix/users?login=".concat(username.substring(1));
+
+function getClips() {
   console.log("USER", username);
-  axios.get("https://api.twitch.tv/kraken/clips/top?channel=".concat(username.substring(1), "&trending=true&limit=6"), {
+  axios.get(endpoint1, {
     headers: {
       Accept: 'application/vnd.twitchtv.v5+json',
       "Client-Id": "38kie46ro8k5h6crb314f7xylbncti"
@@ -1953,20 +1952,36 @@ function result() {
     console.log("response", response);
     var result = response.data.clips;
     console.log("result", result);
+    var docusername = document.getElementById("username");
+    docusername.innerHTML += username.substring(1);
+    var profpic = document.querySelector("#profileImage");
+    profpic.setAttribute("src", response.data.clips[0].broadcaster.logo);
     result.forEach(function (element) {
       console.log(element.url);
-      var node = document.createElement('a');
-      var videonode = document.createElement('video');
-      completenode = node.appendChild(videonode);
-      completenode.setAttribute("src", element.url);
-      completenode.setAttribute('download', element.url);
-      document.querySelector(".downloadPreview").appendChild(completenode);
+      var clipList = document.querySelector('#videoField');
+      var newClip = document.createElement('iframe'); // let videonode = document.createElement('video')
+      // node = clipList.appendChild(newClip);
+
+      newClip.innerHTML = element.embed_html; // completenode.setAttribute('download', element.url);
+
+      document.querySelector(".downloadPreview").appendChild(clipList.appendChild(newClip));
     });
   });
 }
 
-;
-result();
+; // function getUserInfo () {
+//   axios.get(endpoint2, {
+//     headers: {
+//       'Authorization': 'Bearer cfabdegwdoklmawdzdo98xt2fo512y',
+//       'Client-Id': 'uo6dggojyb8d6soh92zknwmi5ej1q2'
+//     },
+//   }).then((response) => {
+//     console.log("ENDPOINT2", response);
+//   })
+// }
+// getUserInfo();
+
+getClips();
 },{"axios":"node_modules/axios/index.js"}],"C:/Users/hayde/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -1995,11 +2010,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56922" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43349" + '/');
->>>>>>> main
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54270" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
