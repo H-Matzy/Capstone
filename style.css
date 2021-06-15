@@ -176,7 +176,8 @@
     width: auto;
     display: flex;
     flex-flow: row;
-    padding-left: 25%;
+    padding-top: 10px;
+    padding-left: 15px;
     padding-right: 15px;
     /* border-top: solid black 1px; */
     justify-content: space-between;

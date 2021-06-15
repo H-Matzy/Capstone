@@ -3,18 +3,11 @@ import html from "html-literal";
 export default () => html`
 <div class="webBody">
             <div class="webLeft">
-                Name of creator
+                <div id="username">User: </div>
                 <div class="profileCard">
-                    <div class="profilePicture"><img src="https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png"></div>
+                    <div class="profilePicture"><img id="profileImage"></div>
                 </div>
                 <div class="profileLevel">Followers: # Subs: #</div>
-                <div class="topFiveCreator">
-                    <!-- <div class="listFive"><a class="twitchContent"><iframe src="https://www.youtube.com/embed/B_C1zkyb9Kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="listFive"><a class="twitchContent"><iframe src="https://www.youtube.com/embed/B_C1zkyb9Kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="listFive"><a class="twitchContent"><iframe src="https://www.youtube.com/embed/B_C1zkyb9Kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="listFive"><a class="twitchContent"><iframe src="https://www.youtube.com/embed/B_C1zkyb9Kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="listFive"><a class="twitchContent"><iframe src="https://www.youtube.com/embed/B_C1zkyb9Kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
-                </div>
             </div>
             
             <div class="webRight">
@@ -24,7 +17,9 @@ export default () => html`
                         
                     </ul>
                 </div>
-                <ul class="downloadPreview" id="testID"><li>TopClips</li></ul>
+                <ul class="downloadPreview" id="testID">
+                <li id="videoField">TopClips</li>
+                </ul>
 
             </div>
         </div>`
