@@ -1962,7 +1962,8 @@ function getClips() {
       var newClip = document.createElement('iframe'); // let videonode = document.createElement('video')
       // node = clipList.appendChild(newClip);
 
-      newClip.innerHTML = element.embed_html; // completenode.setAttribute('download', element.url);
+      newClip.innerHTML = element.embed_html;
+      newClip.setAttribute("src", "".concat(response.data.clips[0].embed_url, "&parent=https://festive-dubinsky-21360a.netlify.app")); // completenode.setAttribute('download', element.url);
 
       document.querySelector(".downloadPreview").appendChild(clipList.appendChild(newClip));
     });
@@ -2010,7 +2011,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54270" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58535" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
