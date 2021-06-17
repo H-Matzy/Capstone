@@ -43,6 +43,7 @@ function getClips () {
     // let videonode = document.createElement('video')
     // node = clipList.appendChild(newClip);
     newClip.innerHTML = element.embed_html
+    newClip.setAttribute("src", `${response.data.clips[0].embed_url}&parent=https://festive-dubinsky-21360a.netlify.app` )
     // completenode.setAttribute('download', element.url);
     document.querySelector(".downloadPreview").appendChild(clipList.appendChild(newClip));
   });
