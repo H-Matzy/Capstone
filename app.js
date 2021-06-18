@@ -35,9 +35,8 @@ function getClips () {
   let profpic = document.querySelector("#profileImage");
   profpic.setAttribute("src", response.data.clips[0].broadcaster.logo)
 
-
+  let counter = 0;
   result.forEach(element => {
-    let counter = 0;
     console.log(element.url);
     let clipList = document.querySelector('#videoField')
     let newClip = document.createElement('iframe')
