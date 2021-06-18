@@ -37,14 +37,16 @@ function getClips () {
 
 
   result.forEach(element => {
+    let counter = 0;
     console.log(element.url);
     let clipList = document.querySelector('#videoField')
     let newClip = document.createElement('iframe')
     // let videonode = document.createElement('video')
     // node = clipList.appendChild(newClip);
-    newClip.setAttribute("src", `${response.data.clips[0].embed_url}&parent=festive-dubinsky-21360a.netlify.app` )
+    newClip.setAttribute("src", `${response.data.clips[counter].embed_url}&parent=festive-dubinsky-21360a.netlify.app` )
     // completenode.setAttribute('download', element.url);
     document.querySelector(".downloadPreview").appendChild(clipList.appendChild(newClip));
+    counter += 1;
   });
 })};
 
