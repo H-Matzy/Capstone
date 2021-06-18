@@ -1957,14 +1957,16 @@ function getClips() {
     var profpic = document.querySelector("#profileImage");
     profpic.setAttribute("src", response.data.clips[0].broadcaster.logo);
     result.forEach(function (element) {
+      var counter = 0;
       console.log(element.url);
       var clipList = document.querySelector('#videoField');
       var newClip = document.createElement('iframe'); // let videonode = document.createElement('video')
       // node = clipList.appendChild(newClip);
 
-      newClip.setAttribute("src", "".concat(response.data.clips[0].embed_url, "&parent=festive-dubinsky-21360a.netlify.app")); // completenode.setAttribute('download', element.url);
+      newClip.setAttribute("src", "".concat(response.data.clips[counter].embed_url, "&parent=festive-dubinsky-21360a.netlify.app")); // completenode.setAttribute('download', element.url);
 
       document.querySelector(".downloadPreview").appendChild(clipList.appendChild(newClip));
+      counter += 1;
     });
   });
 }
@@ -2010,7 +2012,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36215" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34301" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

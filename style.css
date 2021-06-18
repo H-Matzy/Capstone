@@ -210,10 +210,19 @@
 }
 ul#messagesList {
     background-color: aliceblue;
-    min-width: 40vw;
+    width: 40vw;
     height: 70vh;
     overflow-y: scroll;
     border: black solid 1px;
+}
+ul#messagesList li {
+    border-bottom: black 1px solid;
+    
+}
+ul#messagesList li:odd {
+    border-bottom: black 1px solid;
+    background-color:#cce7ff;
+    
 }
 
 .downloadPreview{
