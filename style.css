@@ -186,6 +186,7 @@
     border: solid black 1px;
     height: 100px;
     width: 100px;
+    background: black;
 }
 .profilePicture, img{
     height: 100px;
@@ -201,13 +202,24 @@
 }
 
 .chat-box{
+    background-color: #7D7C7A;
+    color: white;
     display:flex;
     justify-content: flex-start;
+    max-height: 80vh;
+}
+ul#messagesList {
+    background-color: aliceblue;
+    min-width: 40vw;
+    height: 70vh;
+    overflow-y: scroll;
+    border: black solid 1px;
 }
 
 .downloadPreview{
+    min-width: 35%;
     display:flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-flow: column;
 }
 
@@ -231,4 +243,8 @@
 .downloadPreview{
     display:flex;
     align-content: center;
+}
+
+#messagesList{
+
 }

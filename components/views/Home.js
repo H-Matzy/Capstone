@@ -12,9 +12,9 @@ export default () => html`
             
             <div class="webRight">
                 <div id="chat-box">
+                Twitch Chat
                     <ul id="messagesList">
-                        <li>Twitch Chat:</li>
-                        
+                                                
                     </ul>
                 </div>
                 <ul class="downloadPreview" id="testID">
