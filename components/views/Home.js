@@ -7,7 +7,9 @@ export default () => html`
                 <div class="profileCard">
                     <div class="profilePicture"><img id="profileImage"></div>
                 </div>
-                <div class="profileLevel">Followers: # Subs: #</div>
+                <div class="profileLevel">
+                <div id="Followers">Followers:</div>
+                <div id="Subs">Subs:</div></div>
             </div>
             
             <div class="webRight">
