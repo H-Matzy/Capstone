@@ -46,7 +46,7 @@ function getClips () {
   // let followage = document.getElementById('Followers');
   // followage.innerHTML += 
 
-  // let counter = 0;
+  let counter = 0;
   result.forEach(element => {
     console.log(element.url);
     let clipList = document.querySelector('#videoField')
