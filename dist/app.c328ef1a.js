@@ -1158,7 +1158,7 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
-},{"./../utils":"node_modules/axios/lib/utils.js","./../core/settle":"node_modules/axios/lib/core/settle.js","./../helpers/cookies":"node_modules/axios/lib/helpers/cookies.js","./../helpers/buildURL":"node_modules/axios/lib/helpers/buildURL.js","../core/buildFullPath":"node_modules/axios/lib/core/buildFullPath.js","./../helpers/parseHeaders":"node_modules/axios/lib/helpers/parseHeaders.js","./../helpers/isURLSameOrigin":"node_modules/axios/lib/helpers/isURLSameOrigin.js","../core/createError":"node_modules/axios/lib/core/createError.js"}],"C:/Users/hayde/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js","./../core/settle":"node_modules/axios/lib/core/settle.js","./../helpers/cookies":"node_modules/axios/lib/helpers/cookies.js","./../helpers/buildURL":"node_modules/axios/lib/helpers/buildURL.js","../core/buildFullPath":"node_modules/axios/lib/core/buildFullPath.js","./../helpers/parseHeaders":"node_modules/axios/lib/helpers/parseHeaders.js","./../helpers/isURLSameOrigin":"node_modules/axios/lib/helpers/isURLSameOrigin.js","../core/createError":"node_modules/axios/lib/core/createError.js"}],"node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -1468,7 +1468,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-},{"./utils":"node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"node_modules/axios/lib/adapters/xhr.js","./adapters/http":"node_modules/axios/lib/adapters/xhr.js","process":"C:/Users/hayde/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"node_modules/axios/lib/core/dispatchRequest.js":[function(require,module,exports) {
+},{"./utils":"node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"node_modules/axios/lib/adapters/xhr.js","./adapters/http":"node_modules/axios/lib/adapters/xhr.js","process":"node_modules/process/browser.js"}],"node_modules/axios/lib/core/dispatchRequest.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -1920,8 +1920,13 @@ module.exports = require('./lib/axios');
 },{"./lib/axios":"node_modules/axios/lib/axios.js"}],"app.js":[function(require,module,exports) {
 var axios = require('axios').default;
 
+var clip_url = 'https://clips.twitch.tv/SeductiveArtsyShingleANELE-z3xpTO8yfxxzsx04';
+var username = window.location.pathname;
+var endpoint1 = "https://api.twitch.tv/kraken/clips/top?channel=".concat(username.substring(1), "&trending=true&limit=6");
+var endpoint2 = "https://api.twitch.tv/helix/users?login=".concat(username.substring(1));
 var videosList = document.getElementById('videosList');
 var messages = [];
+var downloadLinks = [];
 
 ComfyJS.onChat = function (user, message, flags, self, extra) {
   updateMessages(message);
@@ -1940,15 +1945,9 @@ var updateMessages = function updateMessages(text) {
   var textnode = document.createTextNode(text);
   node.appendChild(textnode);
   document.getElementById("messagesList").appendChild(node);
-}; //attempt to reverse scroll
-
-
-var username = window.location.pathname;
-var endpoint1 = "https://api.twitch.tv/kraken/clips/top?channel=".concat(username.substring(1), "&trending=true&limit=6");
-var endpoint2 = "https://api.twitch.tv/helix/users?login=".concat(username.substring(1));
+};
 
 function getClips() {
-  console.log("USER", username);
   axios.get(endpoint1, {
     headers: {
       Accept: 'application/vnd.twitchtv.v5+json',
@@ -1956,20 +1955,19 @@ function getClips() {
     }
   }).then(function (response) {
     //Full JSON Payload
-    console.log("response", response);
     var result = response.data.clips; //Array of Clip Objects
 
     console.log("result", result);
     var docusername = document.getElementById("username");
     docusername.innerHTML += result[0].broadcaster.name;
     var profpic = document.querySelector("#profileImage");
-    profpic.setAttribute("src", result[0].broadcaster.logo); //CURRENTLY SETTING UP FOR SECOND AXIOS CALL TO GRAB FOLLOWAGE
-    // let followage = document.getElementById('Followers');
-    // followage.innerHTML += 
-    // let counter = 0;
-
+    profpic.setAttribute("src", result[0].broadcaster.logo);
+    var counter = 0;
     result.forEach(function (element) {
-      console.log(element.url);
+      var thumbnail = result[counter].thumbnails.medium; // replacing -preview-480x272.jpg with .mp4
+
+      var thumbFormat = thumbnail.replace('-preview-480x272.jpg', '.mp4');
+      downloadLinks.push(thumbFormat);
       var clipList = document.querySelector('#videoField');
       var newClip = document.createElement('iframe');
       newClip.setAttribute("src", "".concat(result[counter].embed_url, "&parent=festive-dubinsky-21360a.netlify.app"));
@@ -1981,7 +1979,18 @@ function getClips() {
 
 ;
 getClips();
-},{"axios":"node_modules/axios/index.js"}],"C:/Users/hayde/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+window.onload = function () {
+  var button = document.querySelector('#downloadButton');
+  button.addEventListener('click', downloadClips);
+};
+
+function downloadClips() {
+  downloadLinks.forEach(function (link) {
+    window.open(link);
+  });
+}
+},{"axios":"node_modules/axios/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -2009,7 +2018,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63166" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44811" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -2185,5 +2194,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/hayde/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
 //# sourceMappingURL=/app.c328ef1a.js.map
