@@ -64,6 +64,7 @@
 #nav-li{
     padding-top: 25px;
     padding-bottom: 25px;
+    max-height: 30px;
 }
 .navigation a:hover {
     background-color:#E6AF2E;
@@ -133,9 +134,11 @@
     .webLeft{
         align-content: center;
         align-items:center;
-    }
-    .webRight{
-        border-top: solid black 1px;
+        width: auto;
+        display: flex;
+        flex-flow: row;
+        color: black;
+        justify-content: space-around;
     }
     #nav-li{
         max-width: 80px;
@@ -159,6 +162,7 @@
 }
 
 .webBody{
+    flex-flow: column;
     display: flex;
     width: auto;
     height:auto;
@@ -170,10 +174,11 @@
 .webLeft{
     width: auto;
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     color: black;
-    justify-content: flex-start;
-    padding-left: 15px;
+    justify-content: space-around;
+    border-bottom: black solid 1px;
+    /* padding-left: 15px; */
     /* padding-right: 25%; */
     /* border: dotted red 1px; */
 }
@@ -185,7 +190,7 @@
     padding-left: 15px;
     padding-right: 15px;
     /* border-top: solid black 1px; */
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .profileCard{
     border: solid black 1px;
@@ -211,12 +216,12 @@
     color: white;
     display:flex;
     justify-content: flex-start;
-    max-height: 80vh;
+    max-height: 60vh;
 }
 ul#messagesList {
     background-color: aliceblue;
     width: 40vw;
-    height: 70vh;
+    height: 60vh;
     /* overflow-y: scroll; */
     overflow-x: hidden;
     border: black solid 1px;
@@ -237,6 +242,11 @@ ul#messagesList li {
     background-color: rgb(173, 180, 187);
 }
 
+div#downloadList{
+    max-height: 60vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
 .downloadPreview{
     min-width: 35%;
     display:flex;
@@ -265,9 +275,54 @@ ul#messagesList li {
     display:flex;
     align-content: center;
 }
+/* download button styling */
+.btn {
+    background-color: #2196F3;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    max-height: 50px;
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: #0b7dda;
+  }
+/* search bar styling */
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 75%;
+    background: #f1f1f1;
+  }
+  
 
-#messagesList{
-
-}
+  /* Style the submit button */
+  form.example button {
+    float: right;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */
