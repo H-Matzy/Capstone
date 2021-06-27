@@ -22,9 +22,9 @@ export default () => html`
                     </ul>
                 </div>
                 <div id="downloadList">
-                <ul class="downloadPreview" id="testID">
-                <li id="videoField">TopClips</li>
+                <ul class="downloadPreview" id="testID">TopClips
                 <button id="downloadButton" class="btn"><i class="fa fa-download"></i> Download</button>
+                <li id="videoField"></li>
                 </ul></div>
 
             </div>
