@@ -23,8 +23,8 @@ export default st => html`
 
             <!-- The form -->
             <form class="example" action="action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <input type="text" id="inputText" placeholder="Search.." name="search">
+            <button type="submit" id="searchButton"><i class="fa fa-search"></i></button>
             </form>
         </div>
         `

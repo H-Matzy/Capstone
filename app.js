@@ -1,8 +1,7 @@
 const axios = require('axios').default;
-const clip_url = 'https://clips.twitch.tv/SeductiveArtsyShingleANELE-z3xpTO8yfxxzsx04';
 
-let username = window.location.pathname
-let endpoint1 = `https://api.twitch.tv/kraken/clips/top?channel=${username.substring(1)}&trending=true&limit=6`;
+let username = window.location.pathname                                                                 //LIMIT SET FOR FILTER
+let endpoint1 = `https://api.twitch.tv/kraken/clips/top?channel=${location.search.substring(8)}&trending=true&limit=10`;
 let endpoint2 = `https://api.twitch.tv/helix/users?login=${username.substring(1)}`;
 const videosList = document.getElementById('videosList')
 const messages = [];
@@ -15,7 +14,7 @@ ComfyJS.onChat = ( user, message, flags, self, extra ) => {
    scroll.scrollTop = scroll.scrollHeight;
    scroll.animate({scrollTop: scroll.scrollHeight});
   }
-ComfyJS.Init( `${window.location.pathname.substring(1)}` );
+ComfyJS.Init( `${location.search.substring(8)}` );
 
 const updateMessages = (text) => {
     messages.push(text);
@@ -58,11 +57,18 @@ function getClips () {
 getClips();
 
 window.onload = function(){
+  let search = document.querySelector('#searchButton')
   let button = document.querySelector('#downloadButton')
   button.addEventListener('click', downloadClips);
+  search.addEventListener('click', redirectURL)
 }
 function downloadClips() {
   downloadLinks.forEach(link => {
     window.open(link);
   })
+}
+
+function redirectURL() {
+  let textInput = document.getElementById('#textInput').value
+  window.location.replace(textInput);
 }
