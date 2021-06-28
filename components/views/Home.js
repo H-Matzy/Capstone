@@ -24,6 +24,7 @@ export default () => html`
                 <div id="downloadList">
                 <ul class="downloadPreview" id="testID">TopClips
                 <button id="downloadButton" class="btn"><i class="fa fa-download"></i> Download</button>
+                <br>
                 <li id="videoField"></li>
                 </ul></div>
 

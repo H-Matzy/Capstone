@@ -18,6 +18,7 @@ export default st => html`
                 </div>
             </div>
         </div>
+        <br>
         <div id="searchBar">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
