@@ -169,6 +169,7 @@
     justify-content: space-between;
     margin: 10px;
     border: solid black 1px;
+    border-radius: 10px;
     padding-bottom: 10px;
 }
 .webLeft{
@@ -224,17 +225,24 @@ ul#messagesList {
     height: 60vh;
     /* overflow-y: scroll; */
     overflow-x: hidden;
+    overflow-y: hidden;
     border: black solid 1px;
 }
-
+#searchButton {
+    border-radius: 10px;
+}
+#inputText {
+    border-radius: 10px;
+}
 #messagesList {
     /* margin: 5px 0 5px 5px; */
     height: 100%;
     overflow:auto;
+    border-radius: 10px;
 }
 ul#messagesList li {
     padding: 5px;
-    border-bottom: black 1px solid;
+    border-top: black 1px solid;
     
 }
 
@@ -284,6 +292,7 @@ div#downloadList{
     cursor: pointer;
     font-size: 20px;
     max-height: 50px;
+    border-radius: 10px;
   }
   
   /* Darker background on mouse-over */
@@ -302,6 +311,9 @@ form.example input[type=text] {
   
 
   /* Style the submit button */
+  #searchBar {
+      margin: 10px;
+  }
   form.example button {
     float: right;
     width: 20%;
