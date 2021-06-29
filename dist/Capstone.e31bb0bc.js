@@ -424,7 +424,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var _default = function _default() {
-  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n<div class=\"outerFooter\">\n            <img id=\"Logo\" src=\"", "\">\n            <div class=\"footerThird\">\n                <a href=\"https://www.linkedin.com/in/hayden-matz-a90b70189/\" class=\"contact\">Contact Page</a>\n            </div>\n            <div class=\"footerThird\">\n                <a href=\"https://haydenmatz.me/index.html\" class=\"about\">About Me</a>\n            </div>\n            <div class=\"footerThird\">\n                \xA9 Hayden Matz 2021\n            </div>"])), _Logo.default);
+  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n<div class=\"outerFooter\">\n            <a href=\"https://www.twitch.tv/hmatzy\"><img id=\"Logo\" src=\"", "\"></a>\n            <div class=\"footerThird\">\n                <a href=\"https://www.linkedin.com/in/hayden-matz-a90b70189/\" class=\"contact\">Contact Page</a>\n            </div>\n            <div class=\"footerThird\">\n                <a href=\"https://haydenmatz.me/index.html\" class=\"about\">About Me</a>\n            </div>\n            <div class=\"footerThird\">\n                \xA9 Hayden Matz 2021\n            </div>"])), _Logo.default);
 };
 
 exports.default = _default;
@@ -19814,7 +19814,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56273" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52804" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
