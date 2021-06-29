@@ -1,9 +1,9 @@
 import html from "html-literal";
-import images from "../images/vivek.png"
+import images from "../images/Logo.png"
 
 export default () => html`
 <div class="outerFooter">
-            <img src="${images}">
+            <img id="Logo" src="${images}">
             <div class="footerThird">
                 <a href="https://www.linkedin.com/in/hayden-matz-a90b70189/" class="contact">Contact Page</a>
             </div>
