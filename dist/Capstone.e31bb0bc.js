@@ -403,8 +403,8 @@ var _default = function _default(st) {
 };
 
 exports.default = _default;
-},{"html-literal":"node_modules/html-literal/build/src/index.js","./views":"components/views/index.js"}],"images/vivek.png":[function(require,module,exports) {
-module.exports = "/vivek.7047cc65.png";
+},{"html-literal":"node_modules/html-literal/build/src/index.js","./views":"components/views/index.js"}],"images/Logo.png":[function(require,module,exports) {
+module.exports = "/Logo.40c5b796.png";
 },{}],"components/Footer.js":[function(require,module,exports) {
 "use strict";
 
@@ -415,7 +415,7 @@ exports.default = void 0;
 
 var _htmlLiteral = _interopRequireDefault(require("html-literal"));
 
-var _vivek = _interopRequireDefault(require("../images/vivek.png"));
+var _Logo = _interopRequireDefault(require("../images/Logo.png"));
 
 var _templateObject;
 
@@ -424,11 +424,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var _default = function _default() {
-  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n<div class=\"outerFooter\">\n            <img src=\"", "\">\n            <div class=\"footerThird\">\n                <a href=\"https://www.linkedin.com/in/hayden-matz-a90b70189/\" class=\"contact\">Contact Page</a>\n            </div>\n            <div class=\"footerThird\">\n                <a href=\"https://haydenmatz.me/index.html\" class=\"about\">About Me</a>\n            </div>\n            <div class=\"footerThird\">\n                \xA9 Hayden Matz 2021\n            </div>"])), _vivek.default);
+  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n<div class=\"outerFooter\">\n            <img id=\"Logo\" src=\"", "\">\n            <div class=\"footerThird\">\n                <a href=\"https://www.linkedin.com/in/hayden-matz-a90b70189/\" class=\"contact\">Contact Page</a>\n            </div>\n            <div class=\"footerThird\">\n                <a href=\"https://haydenmatz.me/index.html\" class=\"about\">About Me</a>\n            </div>\n            <div class=\"footerThird\">\n                \xA9 Hayden Matz 2021\n            </div>"])), _Logo.default);
 };
 
 exports.default = _default;
-},{"html-literal":"node_modules/html-literal/build/src/index.js","../images/vivek.png":"images/vivek.png"}],"components/index.js":[function(require,module,exports) {
+},{"html-literal":"node_modules/html-literal/build/src/index.js","../images/Logo.png":"images/Logo.png"}],"components/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19763,8 +19763,7 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var router = new _navigo.default(window.location.origin); // const { Header, Main, Footer } =require('./components')
-
+var router = new _navigo.default(window.location.origin);
 router.on({
   ":page": function page(params) {
     return render(state[(0, _lodash.capitalize)(params.page)]);
@@ -19777,7 +19776,7 @@ router.on({
 function render() {
   var st = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : state.Home;
   document.querySelector("#root").innerHTML = "\n  ".concat((0, _components.Header)(st), "\n  ").concat((0, _components.Main)(st), "\n  ").concat((0, _components.Footer)(), "\n");
-  router.updatePageLinks(); // addEventListeners(st); not sure why this was in here
+  router.updatePageLinks();
 }
 
 render(state.Home);
@@ -19815,7 +19814,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53173" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56273" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
